@@ -49,7 +49,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.playButton = new System.Windows.Forms.Button();
             this.updatedVersionLabel = new System.Windows.Forms.Label();
-            this.clientReadyLabel = new System.Windows.Forms.Label();
+            this.debugCheckbox = new System.Windows.Forms.CheckBox();
             this.navbarPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.minimizePictureBox)).BeginInit();
@@ -86,11 +86,11 @@
             this.currentVersionLabel.BackColor = System.Drawing.Color.Transparent;
             this.currentVersionLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.currentVersionLabel.ForeColor = System.Drawing.SystemColors.Control;
-            this.currentVersionLabel.Location = new System.Drawing.Point(845, 538);
+            this.currentVersionLabel.Location = new System.Drawing.Point(854, 538);
             this.currentVersionLabel.Name = "currentVersionLabel";
-            this.currentVersionLabel.Size = new System.Drawing.Size(171, 21);
+            this.currentVersionLabel.Size = new System.Drawing.Size(159, 21);
             this.currentVersionLabel.TabIndex = 3;
-            this.currentVersionLabel.Text = "Current Version: 1.0.0.0";
+            this.currentVersionLabel.Text = "Current Version: 1.0.0";
             this.currentVersionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // navbarButton2
@@ -114,6 +114,7 @@
             // 
             this.navbarPanel.BackColor = System.Drawing.Color.Transparent;
             this.navbarPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.navbarPanel.Controls.Add(this.debugCheckbox);
             this.navbarPanel.Controls.Add(this.logoPictureBox);
             this.navbarPanel.Controls.Add(this.minimizePictureBox);
             this.navbarPanel.Controls.Add(this.closePictureBox);
@@ -392,24 +393,28 @@
             this.updatedVersionLabel.BackColor = System.Drawing.Color.Transparent;
             this.updatedVersionLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.updatedVersionLabel.ForeColor = System.Drawing.SystemColors.Control;
-            this.updatedVersionLabel.Location = new System.Drawing.Point(866, 517);
+            this.updatedVersionLabel.Location = new System.Drawing.Point(875, 517);
             this.updatedVersionLabel.Name = "updatedVersionLabel";
-            this.updatedVersionLabel.Size = new System.Drawing.Size(150, 21);
+            this.updatedVersionLabel.Size = new System.Drawing.Size(138, 21);
             this.updatedVersionLabel.TabIndex = 5;
-            this.updatedVersionLabel.Text = "New Version: 1.0.0.0";
+            this.updatedVersionLabel.Text = "New Version: 1.0.0";
             this.updatedVersionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.updatedVersionLabel.Click += new System.EventHandler(this.label1_Click);
             // 
-            // clientReadyLabel
+            // debugCheckbox
             // 
-            this.clientReadyLabel.BackColor = System.Drawing.Color.Transparent;
-            this.clientReadyLabel.Font = new System.Drawing.Font("Segoe UI", 15.25F);
-            this.clientReadyLabel.Location = new System.Drawing.Point(499, 581);
-            this.clientReadyLabel.Name = "clientReadyLabel";
-            this.clientReadyLabel.Size = new System.Drawing.Size(320, 46);
-            this.clientReadyLabel.TabIndex = 4;
-            this.clientReadyLabel.Text = "Your client is up to date!";
-            this.clientReadyLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.debugCheckbox.AutoSize = true;
+            this.debugCheckbox.BackColor = System.Drawing.Color.Transparent;
+            this.debugCheckbox.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.debugCheckbox.Checked = true;
+            this.debugCheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.debugCheckbox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.debugCheckbox.Location = new System.Drawing.Point(897, 38);
+            this.debugCheckbox.Name = "debugCheckbox";
+            this.debugCheckbox.Size = new System.Drawing.Size(119, 25);
+            this.debugCheckbox.TabIndex = 6;
+            this.debugCheckbox.Text = "Debug Mode";
+            this.debugCheckbox.UseVisualStyleBackColor = false;
             // 
             // Application
             // 
@@ -420,7 +425,6 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1028, 643);
             this.Controls.Add(this.patchContainerPanel);
-            this.Controls.Add(this.clientReadyLabel);
             this.Controls.Add(this.navbarPanel);
             this.Controls.Add(this.currentVersionLabel);
             this.Controls.Add(this.updatedVersionLabel);
@@ -438,6 +442,7 @@
             this.Load += new System.EventHandler(this.OnLoadApplication);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Application_MouseDown);
             this.navbarPanel.ResumeLayout(false);
+            this.navbarPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.minimizePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.closePictureBox)).EndInit();
@@ -456,7 +461,6 @@
         private System.Windows.Forms.ProgressBar updateProgressBar;
         private System.Windows.Forms.Label updateLabelText;
         private System.Windows.Forms.Label currentVersionLabel;
-        private System.Windows.Forms.Label onlineVersionLabel;
         private System.Windows.Forms.Button navbarButton2;
         private System.Windows.Forms.Button navbarButton3;
         private System.Windows.Forms.Panel navbarPanel;
@@ -479,7 +483,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox logoPictureBox;
         private System.Windows.Forms.Label updatedVersionLabel;
-        private System.Windows.Forms.Label clientReadyLabel;
+        private System.Windows.Forms.CheckBox debugCheckbox;
     }
 }
 
