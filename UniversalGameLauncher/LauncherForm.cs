@@ -76,7 +76,7 @@ namespace UniversalGameLauncher {
 
         private void InitializeImages() {
             LoadApplicationIcon();
-            navbarPanel.BackColor = Color.FromArgb(25, 100, 100, 100); // // Make panel background semi transparent
+            navbarPanel.BackColor = Color.FromArgb(255, 0, 0, 0); // // Make panel background semi transparent
             logoPictureBox.SizeMode = PictureBoxSizeMode.CenterImage;
             closePictureBox.SizeMode = PictureBoxSizeMode.CenterImage; // Center the X icon
             minimizePictureBox.SizeMode = PictureBoxSizeMode.CenterImage; // Center the - icon
@@ -118,8 +118,10 @@ namespace UniversalGameLauncher {
         }
 
         private void InitializeVersionControl() {
-            currentVersionLabel.Text = Properties.Settings.Default.VersionText;
             OnlineVersion = GetOnlineVersion();
+            currentVersionLabel.Text = "Current Version: " + LocalVersion;
+            updatedVersionLabel.Text = "New Version: " + OnlineVersion;
+
 
             Console.WriteLine("We are on version " + LocalVersion + " and the online version is " + OnlineVersion);
         }
@@ -128,9 +130,11 @@ namespace UniversalGameLauncher {
             if (IsReady) {
                 updateProgressBar.Visible = false;
                 clientReadyLabel.Visible = true;
+                updatedVersionLabel.Visible = false;
             } else {
                 updateProgressBar.Visible = true;
                 clientReadyLabel.Visible= false;
+                updatedVersionLabel.Visible= true;
             }
         }
 
@@ -186,7 +190,7 @@ namespace UniversalGameLauncher {
                 return;
             }
 
-            currentVersionLabel.Text = OnlineVersion.ToString();
+            currentVersionLabel.Text = "Current Version: " + OnlineVersion;
             Properties.Settings.Default.VersionText = OnlineVersion.ToString();
             Properties.Settings.Default.Save();
             Console.WriteLine("Updated version. Now running on version: " + LocalVersion);
@@ -246,23 +250,35 @@ namespace UniversalGameLauncher {
             } catch {
                 IsReady = false;
                 DownloadFile();
-                MessageBox.Show("Couldn't locate the game executable! Attempting to redownload - please wait.", "Fatal Error");
+                // MessageBox.Show("Couldn't locate the game executable! Attempting to redownload - please wait.", "Fatal Error");
             }
         }
 
-        private void TogglePlayButton(bool toggle) {
-            switch(toggle) {
-                case true:
-                    playButton.BackColor = Color.Green;
-                    playButton.Text = "Play";
-                    break;
-                case false:
-                    playButton.BackColor = Color.DeepSkyBlue;
-                    playButton.Text = "Update";
-                    break;
+        private void TogglePlayButton(bool toggle)
+        {
+            if (File.Exists(Constants.GAME_EXECUTABLE_PATH))
+            {
+                // Game executable exists, set button to "Play" or "Update"
+                switch (toggle)
+                {
+                    case true:
+                        playButton.BackColor = Color.Green;
+                        playButton.Text = "Play";
+                        break;
+                    case false:
+                        playButton.BackColor = Color.DeepSkyBlue;
+                        playButton.Text = "Update";
+                        break;
+                }
+            }
+            else
+            {
+                // Game executable missing, set button to "Install"
+                playButton.BackColor = Color.Orange;
+                playButton.Text = "Install";
             }
         }
-        
+
         // Move the form with LMB
         private void Application_MouseDown(object sender, MouseEventArgs e) {
             if (e.Button == MouseButtons.Left) {
@@ -327,6 +343,26 @@ namespace UniversalGameLauncher {
 
         private void closePictureBox_Click(object sender, EventArgs e) {
             Environment.Exit(0);
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void navbarPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

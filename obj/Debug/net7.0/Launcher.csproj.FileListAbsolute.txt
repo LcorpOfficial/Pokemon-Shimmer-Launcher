@@ -1,0 +1,4 @@
+X:\Software\Dev\UniversalGameLauncher\obj\Debug\net7.0\Launcher.csproj.AssemblyReference.cache
+X:\Software\Dev\UniversalGameLauncher\obj\Debug\net7.0\UniversalGameLauncher.Application.resources
+X:\Software\Dev\UniversalGameLauncher\obj\Debug\net7.0\Launcher.UniversalGameLauncher.Properties.Resources.resources
+X:\Software\Dev\UniversalGameLauncher\obj\Debug\net7.0\Launcher.csproj.GenerateResource.cache

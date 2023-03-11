@@ -35,7 +35,6 @@
             this.navbarButton4 = new System.Windows.Forms.Button();
             this.navbarButton3 = new System.Windows.Forms.Button();
             this.navbarButton1 = new System.Windows.Forms.Button();
-            this.clientReadyLabel = new System.Windows.Forms.Label();
             this.patchPanel1 = new System.Windows.Forms.Panel();
             this.patchText1 = new System.Windows.Forms.Label();
             this.patchButton1 = new System.Windows.Forms.Button();
@@ -51,6 +50,8 @@
             this.patchContainerPanel = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.playButton = new System.Windows.Forms.Button();
+            this.updatedVersionLabel = new System.Windows.Forms.Label();
+            this.clientReadyLabel = new System.Windows.Forms.Label();
             this.navbarPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.minimizePictureBox)).BeginInit();
@@ -85,12 +86,14 @@
             // 
             this.currentVersionLabel.AutoSize = true;
             this.currentVersionLabel.BackColor = System.Drawing.Color.Transparent;
+            this.currentVersionLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.currentVersionLabel.ForeColor = System.Drawing.SystemColors.Control;
-            this.currentVersionLabel.Location = new System.Drawing.Point(18, 544);
+            this.currentVersionLabel.Location = new System.Drawing.Point(845, 538);
             this.currentVersionLabel.Name = "currentVersionLabel";
-            this.currentVersionLabel.Size = new System.Drawing.Size(40, 13);
+            this.currentVersionLabel.Size = new System.Drawing.Size(171, 21);
             this.currentVersionLabel.TabIndex = 3;
-            this.currentVersionLabel.Text = "1.0.0.0";
+            this.currentVersionLabel.Text = "Current Version: 1.0.0.0";
+            this.currentVersionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // navbarButton2
             // 
@@ -121,10 +124,12 @@
             this.navbarPanel.Controls.Add(this.navbarButton3);
             this.navbarPanel.Controls.Add(this.navbarButton1);
             this.navbarPanel.Controls.Add(this.navbarButton2);
+            this.navbarPanel.ForeColor = System.Drawing.SystemColors.Control;
             this.navbarPanel.Location = new System.Drawing.Point(0, -1);
             this.navbarPanel.Name = "navbarPanel";
             this.navbarPanel.Size = new System.Drawing.Size(1028, 75);
             this.navbarPanel.TabIndex = 0;
+            this.navbarPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.navbarPanel_Paint);
             // 
             // logoPictureBox
             // 
@@ -140,9 +145,9 @@
             this.minimizePictureBox.BackColor = System.Drawing.Color.Transparent;
             this.minimizePictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.minimizePictureBox.Image = global::UniversalGameLauncher.Properties.Resources.minimize_12x12;
-            this.minimizePictureBox.Location = new System.Drawing.Point(955, 3);
+            this.minimizePictureBox.Location = new System.Drawing.Point(938, 3);
             this.minimizePictureBox.Name = "minimizePictureBox";
-            this.minimizePictureBox.Size = new System.Drawing.Size(25, 25);
+            this.minimizePictureBox.Size = new System.Drawing.Size(42, 25);
             this.minimizePictureBox.TabIndex = 1;
             this.minimizePictureBox.TabStop = false;
             this.minimizePictureBox.Click += new System.EventHandler(this.minimizePictureBox_Click);
@@ -151,12 +156,12 @@
             // 
             // closePictureBox
             // 
-            this.closePictureBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.closePictureBox.BackColor = System.Drawing.Color.Transparent;
             this.closePictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.closePictureBox.Image = global::UniversalGameLauncher.Properties.Resources.cancel_12x12;
-            this.closePictureBox.Location = new System.Drawing.Point(1000, 3);
+            this.closePictureBox.Location = new System.Drawing.Point(980, 3);
             this.closePictureBox.Name = "closePictureBox";
-            this.closePictureBox.Size = new System.Drawing.Size(25, 25);
+            this.closePictureBox.Size = new System.Drawing.Size(45, 25);
             this.closePictureBox.TabIndex = 1;
             this.closePictureBox.TabStop = false;
             this.closePictureBox.Click += new System.EventHandler(this.closePictureBox_Click);
@@ -230,17 +235,6 @@
             this.navbarButton1.TabStop = false;
             this.navbarButton1.Text = "Website";
             this.navbarButton1.UseVisualStyleBackColor = true;
-            // 
-            // clientReadyLabel
-            // 
-            this.clientReadyLabel.BackColor = System.Drawing.Color.Transparent;
-            this.clientReadyLabel.Font = new System.Drawing.Font("Segoe UI", 15.25F);
-            this.clientReadyLabel.Location = new System.Drawing.Point(499, 581);
-            this.clientReadyLabel.Name = "clientReadyLabel";
-            this.clientReadyLabel.Size = new System.Drawing.Size(320, 46);
-            this.clientReadyLabel.TabIndex = 4;
-            this.clientReadyLabel.Text = "Your client is up to date!";
-            this.clientReadyLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // patchPanel1
             // 
@@ -391,7 +385,7 @@
             // 
             // patchContainerPanel
             // 
-            this.patchContainerPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.patchContainerPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.patchContainerPanel.Controls.Add(this.label5);
             this.patchContainerPanel.Controls.Add(this.patchPanel2);
             this.patchContainerPanel.Controls.Add(this.patchPanel1);
@@ -411,6 +405,7 @@
             this.label5.TabIndex = 6;
             this.label5.Text = "Patch Notes";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // playButton
             // 
@@ -428,6 +423,32 @@
             this.playButton.UseVisualStyleBackColor = false;
             this.playButton.Click += new System.EventHandler(this.OnClickPlay);
             // 
+            // updatedVersionLabel
+            // 
+            this.updatedVersionLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.updatedVersionLabel.AutoSize = true;
+            this.updatedVersionLabel.BackColor = System.Drawing.Color.Transparent;
+            this.updatedVersionLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.updatedVersionLabel.ForeColor = System.Drawing.SystemColors.Control;
+            this.updatedVersionLabel.Location = new System.Drawing.Point(866, 517);
+            this.updatedVersionLabel.Name = "updatedVersionLabel";
+            this.updatedVersionLabel.Size = new System.Drawing.Size(150, 21);
+            this.updatedVersionLabel.TabIndex = 5;
+            this.updatedVersionLabel.Text = "New Version: 1.0.0.0";
+            this.updatedVersionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.updatedVersionLabel.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // clientReadyLabel
+            // 
+            this.clientReadyLabel.BackColor = System.Drawing.Color.Transparent;
+            this.clientReadyLabel.Font = new System.Drawing.Font("Segoe UI", 15.25F);
+            this.clientReadyLabel.Location = new System.Drawing.Point(499, 581);
+            this.clientReadyLabel.Name = "clientReadyLabel";
+            this.clientReadyLabel.Size = new System.Drawing.Size(320, 46);
+            this.clientReadyLabel.TabIndex = 4;
+            this.clientReadyLabel.Text = "Your client is up to date!";
+            this.clientReadyLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Application
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -440,6 +461,7 @@
             this.Controls.Add(this.clientReadyLabel);
             this.Controls.Add(this.navbarPanel);
             this.Controls.Add(this.currentVersionLabel);
+            this.Controls.Add(this.updatedVersionLabel);
             this.Controls.Add(this.updateLabelText);
             this.Controls.Add(this.updateProgressBar);
             this.Controls.Add(this.playButton);
@@ -472,6 +494,7 @@
         private System.Windows.Forms.ProgressBar updateProgressBar;
         private System.Windows.Forms.Label updateLabelText;
         private System.Windows.Forms.Label currentVersionLabel;
+        private System.Windows.Forms.Label onlineVersionLabel;
         private System.Windows.Forms.Button navbarButton2;
         private System.Windows.Forms.Button navbarButton5;
         private System.Windows.Forms.Button navbarButton4;
@@ -479,7 +502,6 @@
         private System.Windows.Forms.Panel navbarPanel;
         private System.Windows.Forms.PictureBox closePictureBox;
         private System.Windows.Forms.PictureBox minimizePictureBox;
-        private System.Windows.Forms.Label clientReadyLabel;
         private System.Windows.Forms.Button navbarButton1;
         private System.Windows.Forms.Panel patchPanel1;
         private System.Windows.Forms.Label patchTitle1;
@@ -496,6 +518,8 @@
         private System.Windows.Forms.Panel patchContainerPanel;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox logoPictureBox;
+        private System.Windows.Forms.Label updatedVersionLabel;
+        private System.Windows.Forms.Label clientReadyLabel;
     }
 }
 

@@ -8,3 +8,5 @@ c:\users\teemu\onedrive\tiedostot\visual studio 2017\Projects\UniversalGameLaunc
 c:\users\teemu\onedrive\tiedostot\visual studio 2017\Projects\UniversalGameLauncher\UniversalGameLauncher\obj\Debug\UniversalGameLauncher.exe
 c:\users\teemu\onedrive\tiedostot\visual studio 2017\Projects\UniversalGameLauncher\UniversalGameLauncher\obj\Debug\UniversalGameLauncher.pdb
 C:\Users\teemu\OneDrive\Tiedostot\Visual Studio 2017\Projects\UniversalGameLauncher\UniversalGameLauncher\obj\Debug\UniversalGameLauncher.csprojAssemblyReference.cache
+X:\Software\Dev\UniversalGameLauncher\UniversalGameLauncher\obj\Debug\UniversalGameLauncher.csproj.AssemblyReference.cache
+X:\Software\Dev\UniversalGameLauncher\UniversalGameLauncher\obj\Debug\UniversalGameLauncher.csproj.SuggestedBindingRedirects.cache

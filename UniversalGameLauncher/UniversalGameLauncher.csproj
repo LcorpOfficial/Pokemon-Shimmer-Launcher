@@ -86,6 +86,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="StringUtility.cs" />
+    <None Include="Constants.resx">
+      <DependentUpon>Constants.cs</DependentUpon>
+    </None>
     <EmbeddedResource Include="LauncherForm.resx">
       <DependentUpon>LauncherForm.cs</DependentUpon>
     </EmbeddedResource>
