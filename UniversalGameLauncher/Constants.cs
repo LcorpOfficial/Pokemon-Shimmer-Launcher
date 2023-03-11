@@ -35,12 +35,12 @@ namespace UniversalGameLauncher {
         public static readonly string NAVBAR_BUTTON_1_URL = "https://lcorpcity.com/";
         public static readonly string NAVBAR_BUTTON_2_TEXT = "News";
         public static readonly string NAVBAR_BUTTON_2_URL = "https://lcorpcity.com/";
-        public static readonly string NAVBAR_BUTTON_3_TEXT = "Community";
-        public static readonly string NAVBAR_BUTTON_3_URL = "https://lcorpcity.com/";
+        public static readonly string NAVBAR_BUTTON_3_TEXT = "Discord";
+        public static readonly string NAVBAR_BUTTON_3_URL = "https://discord.gg/2nFA9CU";
         public static readonly string NAVBAR_BUTTON_4_TEXT = "Support";
         public static readonly string NAVBAR_BUTTON_4_URL = "https://lcorpcity.com/";
         public static readonly string NAVBAR_BUTTON_5_TEXT = "Discord";
-        public static readonly string NAVBAR_BUTTON_5_URL = "https://lcorpcity.com/";
+        public static readonly string NAVBAR_BUTTON_5_URL = "https://discord.gg/2nFA9CU";
 
         // Modify this array if you're adding or removing a button
         public static readonly string[] NAVBAR_BUTTON_TEXT_ARRAY = {NAVBAR_BUTTON_1_TEXT, NAVBAR_BUTTON_2_TEXT, NAVBAR_BUTTON_3_TEXT,

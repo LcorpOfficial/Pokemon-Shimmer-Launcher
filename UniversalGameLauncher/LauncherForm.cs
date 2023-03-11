@@ -288,7 +288,7 @@ namespace UniversalGameLauncher {
         }
         
         private void SetUpButtonEvents() {
-            Button[] buttons = { navbarButton1, navbarButton2, navbarButton3, navbarButton4, navbarButton5 };
+            Button[] buttons = { navbarButton1, navbarButton2, navbarButton3 };
 
             for(int i = 0; i < buttons.Length; i++) {
                 buttons[i].Click += new EventHandler(OnClickButton);
@@ -308,13 +308,6 @@ namespace UniversalGameLauncher {
                 case nameof(navbarButton3):
                     System.Diagnostics.Process.Start(Constants.NAVBAR_BUTTON_3_URL);
                     break;
-                case nameof(navbarButton4):
-                    System.Diagnostics.Process.Start(Constants.NAVBAR_BUTTON_4_URL);
-                    break;
-                case nameof(navbarButton5):
-                    System.Diagnostics.Process.Start(Constants.NAVBAR_BUTTON_5_URL);
-                    break;
-
                 case nameof(patchButton1):
                     Process.Start(patchNoteBlocks[0].Link);
                     break;

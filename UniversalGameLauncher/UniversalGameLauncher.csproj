@@ -159,5 +159,8 @@
   <ItemGroup>
     <None Include="Resources\playbuttontest.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\Fonts\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

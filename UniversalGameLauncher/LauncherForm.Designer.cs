@@ -31,8 +31,6 @@
             this.logoPictureBox = new System.Windows.Forms.PictureBox();
             this.minimizePictureBox = new System.Windows.Forms.PictureBox();
             this.closePictureBox = new System.Windows.Forms.PictureBox();
-            this.navbarButton5 = new System.Windows.Forms.Button();
-            this.navbarButton4 = new System.Windows.Forms.Button();
             this.navbarButton3 = new System.Windows.Forms.Button();
             this.navbarButton1 = new System.Windows.Forms.Button();
             this.patchPanel1 = new System.Windows.Forms.Panel();
@@ -119,8 +117,6 @@
             this.navbarPanel.Controls.Add(this.logoPictureBox);
             this.navbarPanel.Controls.Add(this.minimizePictureBox);
             this.navbarPanel.Controls.Add(this.closePictureBox);
-            this.navbarPanel.Controls.Add(this.navbarButton5);
-            this.navbarPanel.Controls.Add(this.navbarButton4);
             this.navbarPanel.Controls.Add(this.navbarButton3);
             this.navbarPanel.Controls.Add(this.navbarButton1);
             this.navbarPanel.Controls.Add(this.navbarButton2);
@@ -168,40 +164,6 @@
             this.closePictureBox.MouseEnter += new System.EventHandler(this.OnMouseEnterIcon);
             this.closePictureBox.MouseLeave += new System.EventHandler(this.OnMouseLeaveIcon);
             // 
-            // navbarButton5
-            // 
-            this.navbarButton5.BackColor = System.Drawing.Color.Transparent;
-            this.navbarButton5.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.navbarButton5.FlatAppearance.BorderSize = 0;
-            this.navbarButton5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.navbarButton5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.navbarButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.navbarButton5.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.navbarButton5.Location = new System.Drawing.Point(823, 0);
-            this.navbarButton5.Name = "navbarButton5";
-            this.navbarButton5.Size = new System.Drawing.Size(125, 72);
-            this.navbarButton5.TabIndex = 0;
-            this.navbarButton5.TabStop = false;
-            this.navbarButton5.Text = "Discord";
-            this.navbarButton5.UseVisualStyleBackColor = false;
-            // 
-            // navbarButton4
-            // 
-            this.navbarButton4.BackColor = System.Drawing.Color.Transparent;
-            this.navbarButton4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.navbarButton4.FlatAppearance.BorderSize = 0;
-            this.navbarButton4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.navbarButton4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.navbarButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.navbarButton4.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.navbarButton4.Location = new System.Drawing.Point(693, 0);
-            this.navbarButton4.Name = "navbarButton4";
-            this.navbarButton4.Size = new System.Drawing.Size(125, 72);
-            this.navbarButton4.TabIndex = 0;
-            this.navbarButton4.TabStop = false;
-            this.navbarButton4.Text = "Support";
-            this.navbarButton4.UseVisualStyleBackColor = false;
-            // 
             // navbarButton3
             // 
             this.navbarButton3.BackColor = System.Drawing.Color.Transparent;
@@ -216,7 +178,7 @@
             this.navbarButton3.Size = new System.Drawing.Size(125, 72);
             this.navbarButton3.TabIndex = 0;
             this.navbarButton3.TabStop = false;
-            this.navbarButton3.Text = "Community";
+            this.navbarButton3.Text = "Discord";
             this.navbarButton3.UseVisualStyleBackColor = false;
             // 
             // navbarButton1
@@ -249,7 +211,7 @@
             // 
             // patchText1
             // 
-            this.patchText1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.patchText1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.patchText1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.patchText1.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.patchText1.ForeColor = System.Drawing.SystemColors.Control;
@@ -298,7 +260,7 @@
             // 
             // patchText2
             // 
-            this.patchText2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.patchText2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.patchText2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.patchText2.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.patchText2.ForeColor = System.Drawing.SystemColors.Control;
@@ -347,7 +309,7 @@
             // 
             // patchText3
             // 
-            this.patchText3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.patchText3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.patchText3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.patchText3.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.patchText3.ForeColor = System.Drawing.SystemColors.Control;
@@ -398,12 +360,12 @@
             // label5
             // 
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 25.25F, System.Drawing.FontStyle.Italic);
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(0, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(717, 73);
             this.label5.TabIndex = 6;
-            this.label5.Text = "Patch Notes";
+            this.label5.Text = "UPDATES";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
@@ -496,8 +458,6 @@
         private System.Windows.Forms.Label currentVersionLabel;
         private System.Windows.Forms.Label onlineVersionLabel;
         private System.Windows.Forms.Button navbarButton2;
-        private System.Windows.Forms.Button navbarButton5;
-        private System.Windows.Forms.Button navbarButton4;
         private System.Windows.Forms.Button navbarButton3;
         private System.Windows.Forms.Panel navbarPanel;
         private System.Windows.Forms.PictureBox closePictureBox;
