@@ -23,7 +23,7 @@ namespace UniversalGameLauncher {
 
         public static readonly string VERSION_URL = "https://cdn.lcorpcity.com/version.txt";
         public static readonly string APPLICATION_ICON_URL = "https://media.lcorpcity.com/img/web/adminball.ico"; // Needs to be .ico
-        public static readonly string LOGO_URL = "https://media.lcorpcity.com/img/web/adminball.png"; // Ideally around 283x75
+        public static readonly string LOGO_URL = "https://media.lcorpcity.com/img/web/shimmerlogo.png"; // Ideally around 283x75
         public static readonly string BACKGROUND_URL = "https://media.lcorpcity.com/img/web/shimmersplash.png";
         public static readonly string PATCH_NOTES_URL = "https://cdn.lcorpcity.com/shimmerpatch.xml";
         public static readonly string CLIENT_DOWNLOAD_URL = "https://cdn.lcorpcity.com/shimmerupdate.zip";
