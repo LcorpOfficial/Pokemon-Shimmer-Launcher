@@ -39,7 +39,7 @@ namespace UniversalGameLauncher
             }
         }
 
-        public bool UpToDate { get { return LocalVersion >= OnlineVersion; } }
+        public bool UpToDate { get { return LocalVersion == OnlineVersion; } }
 
         public Application()
         {

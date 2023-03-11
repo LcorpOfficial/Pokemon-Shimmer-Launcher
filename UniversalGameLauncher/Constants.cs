@@ -17,7 +17,7 @@ namespace UniversalGameLauncher {
         /// <summary>
         /// Paths & urls
         /// </summary>
-        public static readonly string DESTINATION_PATH = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), GAME_TITLE);
+        public static readonly string DESTINATION_PATH = Path.Combine(AppDomain.CurrentDomain.BaseDirectory);
         public static readonly string ZIP_PATH = Path.Combine(DESTINATION_PATH, GAME_TITLE + ".zip");
         public static readonly string GAME_EXECUTABLE_PATH = Path.Combine(DESTINATION_PATH, "Game.exe");
 
@@ -48,6 +48,9 @@ namespace UniversalGameLauncher {
 
         /// <summary>
         /// Settings
+        public static readonly int MAX_EXTRACTION_RETRIES = 5;
+        public static readonly int EXTRACTION_RETRY_INTERVAL = 1000; // in milliseconds
+
         /// </summary>
         public static bool SHOW_VERSION_TEXT = true;
         public static bool AUTOMATICALLY_BEGIN_UPDATING = false;
