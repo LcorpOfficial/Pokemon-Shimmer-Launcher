@@ -214,7 +214,7 @@ namespace UniversalGameLauncher
         {
             _downloadProgressTracker.Reset();
             updateLabelText.Text = "Download finished - extracting...";
-
+            Console.WriteLine("Starting Extract...");
             Extract extract = new Extract(this);
             extract.Run();
         }

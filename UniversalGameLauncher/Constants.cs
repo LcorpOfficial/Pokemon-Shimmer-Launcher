@@ -18,7 +18,7 @@ namespace UniversalGameLauncher {
         /// Paths & urls
         /// </summary>
         public static readonly string DESTINATION_PATH = Path.Combine(AppDomain.CurrentDomain.BaseDirectory);
-        public static readonly string ZIP_PATH = Path.Combine(DESTINATION_PATH, GAME_TITLE + ".zip");
+        public static readonly string ZIP_PATH = Path.Combine(DESTINATION_PATH, "shimmerupdate.zip");
         public static readonly string GAME_EXECUTABLE_PATH = Path.Combine(DESTINATION_PATH, "Game.exe");
 
         public static readonly string VERSION_URL = "https://cdn.lcorpcity.com/version.txt";

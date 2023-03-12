@@ -58,6 +58,7 @@ namespace UniversalGameLauncher
 
                     FastZip fastZip = new FastZip();
                     fastZip.ExtractZip(Constants.ZIP_PATH, Constants.DESTINATION_PATH, null);
+                    Console.WriteLine("Finished Extracting");
                 }
             );
 
