@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Net;
+using System.Net.Cache;
 using System.Threading;
 using System.Windows.Forms;
 using System.Xml;
@@ -18,6 +19,9 @@ namespace UniversalGameLauncher
 
         private DownloadProgressTracker _downloadProgressTracker;
         private WebClient _webClient;
+        private ProgressBar extractionProgressBar;
+        private Label extractionStatusLabel;
+
 
         public Version LocalVersion { get { return new Version(Properties.Settings.Default.VersionText); } }
         public Version OnlineVersion { get; private set; }
@@ -65,6 +69,15 @@ namespace UniversalGameLauncher
             {
                 DownloadFile();
             }
+
+            // Create an instance of the Extract class
+            Extract extract = new Extract(this);
+
+            // Subscribe to the ProgressChanged event
+            extract.ProgressChanged += ExtractionProgressChanged;
+
+            // Subscribe to the ExtractionCompleted event (if needed)
+            extract.ExtractionCompleted += ExtractionCompleted;
         }
 
         private void InitializeConstantsSettings()
@@ -88,16 +101,19 @@ namespace UniversalGameLauncher
         private void InitializeImages()
         {
             LoadApplicationIcon();
-            navbarPanel.BackColor = Color.FromArgb(255, 0, 0, 0); // // Make panel background semi transparent
+            navbarPanel.BackColor = Color.FromArgb(255, 0, 0, 0); // Make panel background semi-transparent
             logoPictureBox.SizeMode = PictureBoxSizeMode.CenterImage;
             closePictureBox.SizeMode = PictureBoxSizeMode.CenterImage; // Center the X icon
             minimizePictureBox.SizeMode = PictureBoxSizeMode.CenterImage; // Center the - icon
             try
             {
                 logoPictureBox.Load(Constants.LOGO_URL);
+
+                // Append a unique query parameter to the background image URL
+                string backgroundImageUrl = Constants.BACKGROUND_URL + "?timestamp=" + DateTime.Now.Ticks;
                 using (WebClient webClient = new WebClient())
                 {
-                    using (Stream stream = webClient.OpenRead(Constants.BACKGROUND_URL))
+                    using (Stream stream = webClient.OpenRead(backgroundImageUrl))
                     {
                         BackgroundImage = Image.FromStream(stream);
                     }
@@ -108,6 +124,8 @@ namespace UniversalGameLauncher
                 MessageBox.Show("The launcher was unable to retrieve some game images from the server! " + e, "Error");
             }
         }
+
+
 
         private void LoadApplicationIcon()
         {
@@ -154,11 +172,20 @@ namespace UniversalGameLauncher
             {
                 updateProgressBar.Visible = false;
                 updatedVersionLabel.Visible = false;
+                extractionProgressBar = new ProgressBar();
+                extractionProgressBar.Visible = false;
+                extractionStatusLabel = new Label();
+                extractionStatusLabel.Visible = false;
+
             }
             else
             {
                 updateProgressBar.Visible = true;
                 updatedVersionLabel.Visible = true;
+                extractionProgressBar = new ProgressBar();
+                extractionProgressBar.Visible = true;
+                extractionStatusLabel = new Label();
+                extractionStatusLabel.Visible = true;
             }
         }
 
@@ -214,11 +241,37 @@ namespace UniversalGameLauncher
         {
             _downloadProgressTracker.Reset();
             updateLabelText.Text = "Download finished - extracting...";
-            Console.WriteLine("Starting Extract...");
+
+            // Show the extraction progress controls
+            extractionProgressBar.Visible = true;
+            extractionStatusLabel.Visible = true;
+
+            // Create an instance of the Extract class
             Extract extract = new Extract(this);
+
+            // Attach event handlers to update the extraction progress
+            extract.ProgressChanged += ExtractionProgressChanged;
+            extract.ExtractionCompleted += ExtractionCompleted;
+
+            // Start the extraction process asynchronously
             extract.Run();
         }
 
+        private void ExtractionProgressChanged(object sender, ExtractProgressEventArgs e)
+        {
+            // Update the extraction progress bar value
+            extractionProgressBar.Value = (int)e.ProgressPercentage;
+        }
+
+        private void ExtractionCompleted(object sender, EventArgs e)
+        {
+            // Hide the extraction progress controls
+            extractionProgressBar.Visible = false;
+            extractionStatusLabel.Visible = false;
+
+            // Set the launcher ready
+            SetLauncherReady();
+        }
         public void SetLauncherReady()
         {
             updateLabelText.Text = "";
